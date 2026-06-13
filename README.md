@@ -11,8 +11,6 @@
 
 Snake — ilonni boshqarib ovqat yeydigan klassik o'yin. Har yutgan ovqat bilan ilon uzayadi va tezlashadi. Devorga yoki o'z dumiga tegsa — o'yin tugaydi!
 
-O'yin **Claude (Anthropic)** sun'iy intellekti tomonidan yaratilgan.
-
 ---
 
 ## ✨ Xususiyatlar
