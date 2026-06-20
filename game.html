@@ -1,9 +1,29 @@
 
 <style>
 * { box-sizing: border-box; margin: 0; padding: 0; touch-action: none; }
-
+body { background: transparent; }
+#game-wrap { display: flex; flex-direction: column; align-items: center; padding: 12px 0; font-family: var(--font-sans); user-select: none; }
+#topbar { display: flex; justify-content: space-between; align-items: center; width: 340px; margin-bottom: 10px; }
+#score-box { font-size: 15px; color: var(--color-text-secondary); }
+#score-val { font-size: 20px; font-weight: 500; color: var(--color-text-primary); }
+#best-box { font-size: 13px; color: var(--color-text-secondary); text-align: right; }
+canvas { border-radius: 10px; border: 1.5px solid var(--color-border-secondary); display: block; background: #0a0a0a; }
+#overlay { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border-radius: 10px; background: rgba(0,0,0,0.75); display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 10px; }
+#overlay h2 { color: #fff; font-size: 22px; font-weight: 500; }
+#overlay p { color: #aaa; font-size: 14px; }
+#start-btn { margin-top: 6px; padding: 10px 32px; border-radius: 8px; border: 1.5px solid #4ade80; background: transparent; color: #4ade80; font-size: 16px; font-weight: 500; cursor: pointer; }
+#start-btn:active { opacity: 0.7; }
+#canvas-wrap { position: relative; }
 #dpad { display: grid; grid-template-columns: repeat(3, 64px); grid-template-rows: repeat(3, 64px); gap: 4px; margin-top: 14px; }
-.dpad-btn { width: 6</div>
+.dpad-btn { width: 64px; height: 64px; border-radius: 10px; border: 1.5px solid var(--color-border-secondary); background: var(--color-background-secondary); display: flex; align-items: center; justify-content: center; font-size: 22px; cursor: pointer; color: var(--color-text-primary); -webkit-tap-highlight-color: transparent; }
+.dpad-btn:active { background: var(--color-background-tertiary); }
+.dpad-empty { visibility: hidden; }
+</style>
+
+<div id="game-wrap" aria-label="Snake o'yini">
+  <div id="topbar">
+    <div id="score-box">Ball: <span id="score-val">0</span></div>
+    <div id="best-box">Rekord: <span id="best-val">0</span></div>
   </div>
   <div id="canvas-wrap">
     <canvas id="c" width="340" height="340"></canvas>
